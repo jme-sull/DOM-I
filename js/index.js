@@ -50,15 +50,28 @@ const headerButton = document.querySelector('.cta-text button');
 headerButton.textContent = siteContent["cta"]["button"]
 
 //nav
-const nav = document.querySelectorAll('nav a');
-navArray = Array.from(nav);
+const navLinks = document.querySelectorAll('nav a');
+
+navArray = Array.from(navLinks);
 
 const navTexts = Object.values(siteContent.nav);
 navTexts.pop();
 
 navArray.forEach((link, index) => {
   link.textContent = navTexts[index]
+  link.style.color = 'green'
 })
+
+const nav = document.querySelector('nav')
+let newChild = document.createElement('a');
+newChild.textContent = 'Sullivan'
+newChild.style.color = 'green'
+nav.appendChild(newChild)
+
+let newChild2 = document.createElement('a')
+newChild2.textContent = 'Jamie'
+newChild2.style.color  = 'green'
+nav.prepend(newChild2)
 
 //middle image
 const middleImage = document.querySelector('#middle-img')
