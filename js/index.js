@@ -13,6 +13,13 @@ const siteContent = {
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
+
+  "alt-cta": {
+    "h1": "You Are Awesome",
+    "button": "Really Great"
+
+  },
+
   "main-content": {
     "features-h4":"Features",
     "features-content": "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
@@ -41,13 +48,23 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+
 //cta
 let headerImage = document.getElementById("cta-img");
 headerImage.setAttribute('src', siteContent["cta"]["img-src"])
 const h1 = document.querySelector('.cta-text h1');
 h1.textContent = siteContent["cta"]["h1"]
+
+
 const headerButton = document.querySelector('.cta-text button');
 headerButton.textContent = siteContent["cta"]["button"]
+
+headerButton.addEventListener('click', (event) => {
+  headerButton.textContent = siteContent['alt-cta']['button']
+  h1.textContent = siteContent["alt-cta"]['h1']
+})
+
+
 
 //nav
 const navLinks = document.querySelectorAll('nav a');
